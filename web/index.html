@@ -1,0 +1,526 @@
+<title>Redlining ERPNext #42807</title>
+
+<style>
+  :root {
+    --ground: #f1f1ef;
+    --surface: #ffffff;
+    --surface-sunk: #f8f8f6;
+    --rule: #dedddb;
+    --rule-strong: #c3c2bb;
+
+    --ink: #1a1a18;
+    --ink-soft: #5e5e58;
+    --ink-faint: #8a8a82;
+
+    /* The only colour on the page. Struck text is the error; inserted text is
+       the correction. Nothing else earns a hue. */
+    --strike: #b3372e;
+    --strike-quiet: #f7e6e4;
+    --insert: #2c6e4a;
+    --insert-quiet: #e2efe7;
+
+    --shadow: 0 1px 2px rgba(26, 26, 24, .05), 0 10px 24px -14px rgba(26, 26, 24, .2);
+
+    --display: Tahoma, Verdana, Geneva, "DejaVu Sans", sans-serif;
+    --sans: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    --mono: Consolas, "Cascadia Mono", "SF Mono", Menlo, "DejaVu Sans Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #161614;
+      --surface: #1e1e1c;
+      --surface-sunk: #191917;
+      --rule: #33332f;
+      --rule-strong: #4a4a44;
+
+      --ink: #edede9;
+      --ink-soft: #a5a59d;
+      --ink-faint: #82827a;
+
+      --strike: #ff8a7e;
+      --strike-quiet: #3a1a17;
+      --insert: #6fc496;
+      --insert-quiet: #14301f;
+
+      --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 24px -14px rgba(0, 0, 0, .8);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #161614;
+    --surface: #1e1e1c;
+    --surface-sunk: #191917;
+    --rule: #33332f;
+    --rule-strong: #4a4a44;
+
+    --ink: #edede9;
+    --ink-soft: #a5a59d;
+    --ink-faint: #82827a;
+
+    --strike: #ff8a7e;
+    --strike-quiet: #3a1a17;
+    --insert: #6fc496;
+    --insert-quiet: #14301f;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 24px -14px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 34px 20px 90px; }
+
+  .masthead { border-bottom: 1px solid var(--rule-strong); padding-bottom: 20px; margin-bottom: 30px; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--ink-faint); margin: 0 0 10px;
+  }
+  .eyebrow a { color: var(--ink-soft); }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(28px, 4.2vw, 44px);
+    line-height: 1.08; letter-spacing: -.03em; font-weight: 700;
+    margin: 0; text-wrap: balance; max-width: 17ch;
+  }
+
+  .standfirst { margin: 14px 0 0; color: var(--ink-soft); max-width: 66ch; }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+    font-weight: 700; color: var(--ink-soft);
+    margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+  }
+
+  section { margin-top: 36px; }
+
+  /* ---- the redline, which is the whole design ---- */
+  .correction {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    box-shadow: var(--shadow);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+
+  .correction .tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: 8px;
+  }
+
+  .redline {
+    font-size: clamp(16px, 2.1vw, 20px);
+    line-height: 1.5;
+    margin: 0 0 12px;
+    max-width: 62ch;
+  }
+
+  del {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: var(--strike);
+    background: var(--strike-quiet);
+    padding: 1px 3px;
+    border-radius: 2px;
+  }
+
+  ins {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    color: var(--insert);
+    background: var(--insert-quiet);
+    padding: 1px 3px;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  .because { margin: 0; font-size: 14px; color: var(--ink-soft); max-width: 68ch; }
+  .because cite {
+    font-family: var(--mono); font-style: normal; font-size: 13px; color: var(--ink);
+  }
+
+  .consequence {
+    margin: 10px 0 0; padding: 9px 12px; font-size: 13.5px;
+    background: var(--surface-sunk); border-left: 3px solid var(--rule-strong); border-radius: 2px;
+    max-width: 68ch;
+  }
+  .consequence strong { color: var(--strike); font-family: var(--mono); }
+
+  /* ---- try it ---- */
+  .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 2px; box-shadow: var(--shadow); }
+  .panel-body { padding: 18px 20px; }
+
+  .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .field > span {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .09em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  input[type="number"], input[type="date"], select {
+    font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums;
+    color: var(--ink); background: var(--surface-sunk);
+    border: 1px solid var(--rule-strong); border-radius: 2px; padding: 7px 8px; width: 100%; min-width: 0;
+  }
+  input:focus-visible, select:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .checks { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+  .check { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-soft); }
+  .check input { accent-color: var(--insert); width: 15px; height: 15px; }
+
+  .result { border-top: 1px solid var(--rule); padding: 18px 20px; }
+  .result-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px 22px;
+  }
+  .out .label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .09em;
+    text-transform: uppercase; color: var(--ink-soft); display: block;
+  }
+  .out .value {
+    font-family: var(--mono); font-variant-numeric: tabular-nums;
+    font-size: 20px; font-weight: 700; letter-spacing: -.02em;
+  }
+  .out.is-capped .value { color: var(--strike); }
+  .out.is-ok .value { color: var(--insert); }
+
+  .verdict {
+    margin-top: 16px; padding: 12px 14px; font-size: 13.5px; border-radius: 2px;
+    border-left: 3px solid var(--rule-strong); background: var(--surface-sunk);
+    max-width: 70ch;
+  }
+  .verdict.is-capped { border-left-color: var(--strike); background: var(--strike-quiet); }
+  .verdict.is-unprotected { border-left-color: var(--ink-faint); }
+
+  /* ---- tables ---- */
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; background: var(--surface); }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  thead th {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 600; background: var(--surface-sunk);
+  }
+  td.num, td.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  td.wrong { color: var(--strike); }
+  td.right { color: var(--insert); font-weight: 600; }
+  tbody tr:last-child td { border-bottom: 0; }
+
+  pre.code {
+    margin: 0; padding: 16px 18px; overflow-x: auto;
+    background: var(--surface-sunk); border: 1px solid var(--rule); border-radius: 2px;
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.65; color: var(--ink);
+  }
+  pre.code .add { color: var(--insert); }
+  pre.code .ctx { color: var(--ink-faint); }
+
+  ul.plain { margin: 0; padding-left: 20px; max-width: 70ch; }
+  ul.plain li { margin-bottom: 7px; }
+  ul.plain code, p code { font-family: var(--mono); font-size: 13px; background: var(--surface-sunk); padding: 1px 5px; border-radius: 2px; }
+
+  .colophon {
+    margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--ink-faint); max-width: 78ch;
+  }
+  .colophon p { margin: 0 0 8px; }
+  .colophon strong { color: var(--ink-soft); }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">A redline of <a href="https://github.com/frappe/erpnext/issues/42807">frappe/erpnext #42807</a> &middot; open since 17 Aug 2024</p>
+    <h1>The 45 days is a ceiling, not the rule</h1>
+    <p class="standfirst">
+      ERPNext has no way to run a payment term from the date goods were received, which is
+      what India's MSMED Act requires. Issue #42807 asks for one. The feature is right and
+      the specification is wrong in three places &mdash; each of which would ship an
+      implementation that quietly under-reports a buyer's statutory exposure.
+    </p>
+  </header>
+
+  <section>
+    <h2>Three corrections to the specification</h2>
+
+    <div class="correction">
+      <span class="tag">Correction 1 &middot; the period</span>
+      <p class="redline">
+        Payments to MSME suppliers must be made within
+        <del>45 days</del> <ins>45 days where the terms are in writing, and 15 days where they are not</ins>.
+      </p>
+      <p class="because">
+        <cite>MSMED Act 2006, s.15.</cite> Forty-five days is the maximum a written agreement
+        may stipulate, not a default that applies to every supply. Where there is no written
+        agreement the Act gives 15 days, and no contract can extend it.
+      </p>
+      <p class="consequence">
+        An implementation that hardcodes 45 days reports a due date up to
+        <strong>30 days late</strong> for every purchase made on an informal arrangement &mdash;
+        which is most small purchases.
+      </p>
+    </div>
+
+    <div class="correction">
+      <span class="tag">Correction 2 &middot; who is covered</span>
+      <p class="redline">
+        Add a checkbox in the Supplier master to mark a supplier as
+        <del>MSME</del> <ins>micro or small, as classified under S.O. 1364(E)</ins>.
+      </p>
+      <p class="because">
+        <cite>MSMED Act 2006, s.2(n).</cite> A &ldquo;supplier&rdquo; is a micro or small
+        enterprise that has filed a Udyam memorandum. <strong>Medium enterprises are excluded
+        entirely</strong> &mdash; the M in MSME is not covered by the delayed-payment provisions,
+        and s.43B(h) does not reach them either.
+      </p>
+      <p class="consequence">
+        A single &ldquo;is MSME&rdquo; checkbox applies the 45-day clock to medium suppliers who
+        are entitled to no such thing, <strong>voiding valid contractual terms</strong> and
+        raising compliance alarms that do not exist.
+      </p>
+    </div>
+
+    <div class="correction">
+      <span class="tag">Correction 3 &middot; where the clock starts</span>
+      <p class="redline">
+        Due Date = <del>Receipt Date</del> <ins>the day of acceptance</ins> + the allowed period.
+      </p>
+      <p class="because">
+        <cite>MSMED Act 2006, s.2(b), explanation (i).</cite> Acceptance is the day of actual
+        delivery &mdash; unless the buyer objects in writing within 15 days, in which case the
+        clock starts only when the supplier removes the objection. Receipt is the usual case,
+        not the rule.
+      </p>
+      <p class="consequence">
+        Treating receipt as always decisive starts the clock too early on disputed deliveries,
+        and <strong>overstates interest</strong> the supplier cannot actually claim.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Try the corrected rules</h2>
+    <div class="panel">
+      <div class="panel-body">
+        <form id="controls" autocomplete="off">
+          <div class="fields">
+            <label class="field">
+              <span>Goods accepted on</span>
+              <input type="date" id="acceptanceDate" value="2026-04-01" />
+            </label>
+            <label class="field">
+              <span>Credit days agreed</span>
+              <input type="number" id="agreedDays" value="90" min="0" max="365" step="1" />
+            </label>
+            <label class="field">
+              <span>Supplier category</span>
+              <select id="category">
+                <option value="Micro" selected>Micro</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+              </select>
+            </label>
+          </div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" id="hasWrittenAgreement" checked /> Terms are in writing</label>
+            <label class="check"><input type="checkbox" id="udyamRegistered" checked /> Udyam registered</label>
+            <label class="check"><input type="checkbox" id="isTrader" /> Supplier is a trader</label>
+          </div>
+        </form>
+      </div>
+      <div class="result">
+        <div class="result-grid">
+          <div class="out" id="outAllowed">
+            <span class="label">Days allowed</span>
+            <span class="value" id="vAllowed">&mdash;</span>
+          </div>
+          <div class="out">
+            <span class="label">Payment due</span>
+            <span class="value" id="vDue">&mdash;</span>
+          </div>
+          <div class="out">
+            <span class="label">Interest runs from</span>
+            <span class="value" id="vAppointed">&mdash;</span>
+          </div>
+          <div class="out">
+            <span class="label">s.43B(h) applies</span>
+            <span class="value" id="v43bh">&mdash;</span>
+          </div>
+        </div>
+        <div class="verdict" id="verdict">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the issue would compute, against what the Act requires</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Supply</th>
+            <th>Issue as written</th>
+            <th>MSMED Act</th>
+            <th>Error</th>
+          </tr>
+        </thead>
+        <tbody id="comparisonRows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the patch changes in core</h2>
+    <p class="because" style="margin-bottom: 14px;">
+      The statutory logic does not belong in ERPNext core &mdash; <code>erpnext/regional/</code>
+      has no India directory, because India compliance lives in the separate
+      <code>india_compliance</code> app. What core is genuinely missing is the generic hook: a
+      payment term that runs from receipt rather than from the invoice. That is not an Indian
+      idea. The EU Late Payment Directive 2011/7/EU runs from receipt of the goods too.
+    </p>
+    <pre class="code"><span class="ctx">  def get_due_date(term, posting_date=None, bill_date=None<span class="add">, receipt_date=None</span>):
+      ...
+      elif term.due_date_based_on == "Month(s) after the end of the invoice month":
+          due_date = get_last_day(add_months(date, cint(term.credit_months)))</span>
+<span class="add">+   elif term.due_date_based_on == "Day(s) after receipt date":
++       # Several jurisdictions run the payment clock from receipt of the goods
++       # rather than the invoice date -- India's MSMED Act s.15 and the EU Late
++       # Payment Directive 2011/7/EU among them. Fall back to the invoice date
++       # when nothing has been received yet, so this term can never produce a
++       # null due date on an invoice raised ahead of delivery.
++       due_date = add_days(receipt_date or date, cint(term.credit_days))</span></pre>
+    <ul class="plain" style="margin-top: 16px;">
+      <li>Adds <code>Day(s) after receipt date</code> to <code>due_date_based_on</code> on Payment Term, Payment Terms Template Detail and Payment Schedule &mdash; and deliberately <strong>not</strong> to <code>discount_validity_based_on</code>, which stays invoice-based.</li>
+      <li>Resolves the receipt date from the submitted Purchase Receipts behind the invoice, taking the <strong>earliest</strong>, so a buyer cannot stretch the clock by invoicing late.</li>
+      <li>Falls back to the invoice date when nothing has been received, so the term can never yield a null due date.</li>
+      <li>Two tests in ERPNext's own style, plus the statutory module and conformance vectors kept outside core.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How this was verified</h2>
+    <ul class="plain">
+      <li><strong>20 tests</strong> on the reference implementation, in plain Python with no framework &mdash; so an accountant can read it and a maintainer can run it without a bench.</li>
+      <li><strong>11 tests</strong> executing ERPNext's real patched <code>get_due_date</code> against a stubbed <code>frappe</code>. Four of them pin the three pre-existing options so the change cannot regress them.</li>
+      <li><strong>288 conformance vectors</strong> generated from the Python module and asserted against the JavaScript port that drives this page, so the page cannot drift from the module.</li>
+      <li>The patch is confirmed to <code>git apply</code> cleanly against <code>1f83906</code> on <code>develop</code>.</li>
+    </ul>
+    <p class="because" style="margin-top: 14px;">
+      What has <em>not</em> been done: ERPNext's own suite needs bench, MariaDB and Redis, none
+      of which were available. The two tests added to
+      <code>test_payment_terms_template.py</code> follow the file's existing DB-free pattern but
+      have not been run in a live instance.
+    </p>
+  </section>
+
+  <div class="colophon">
+    <p>
+      <strong>Sources.</strong> MSMED Act 2006 ss.2(b), 2(n), 15 and 16. Income Tax Act 1961
+      s.43B(h), inserted by the Finance Act 2023 and effective from AY 2024&ndash;25, which
+      reaches micro and small enterprises only and excludes traders. Classification per
+      notification S.O. 1364(E) of 21 March 2025, in force 1 April 2025: micro up to
+      &#8377;2.5cr investment and &#8377;10cr turnover, small up to &#8377;25cr and
+      &#8377;100cr, medium up to &#8377;125cr and &#8377;500cr, on composite criteria.
+    </p>
+    <p>
+      <strong>Not legal advice.</strong> This is a specification review offered to an open
+      source project. Confirm the position against the bare Act before relying on it.
+    </p>
+  </div>
+</div>
+
+<script>
+/*__ENGINE__*/
+
+const el = (id) => document.getElementById(id);
+
+function readInput() {
+  return {
+    acceptanceDate: el('acceptanceDate').value || '2026-04-01',
+    agreedDays: parseInt(el('agreedDays').value, 10) || 0,
+    hasWrittenAgreement: el('hasWrittenAgreement').checked,
+    category: el('category').value,
+    udyamRegistered: el('udyamRegistered').checked,
+  };
+}
+
+function render() {
+  const input = readInput();
+  const r = statutoryDueDate(input);
+  const applies43bh = is43BhApplicable(input.category, input.udyamRegistered, el('isTrader').checked);
+
+  el('vAllowed').textContent = r.allowedDays + 'd';
+  el('vDue').textContent = isoDate(r.dueDate);
+  el('vAppointed').textContent = r.appointedDate ? isoDate(r.appointedDate) : 'n/a';
+  el('v43bh').textContent = applies43bh ? 'Yes' : 'No';
+
+  el('outAllowed').className = 'out' + (r.capped ? ' is-capped' : r.protected ? ' is-ok' : '');
+
+  const verdict = el('verdict');
+  if (!r.protected) {
+    verdict.className = 'verdict is-unprotected';
+    verdict.textContent =
+      r.notes[0] + ' The agreed ' + r.allowedDays + ' days stand, and no statutory interest arises.';
+  } else if (r.capped) {
+    verdict.className = 'verdict is-capped';
+    verdict.textContent =
+      r.notes[0] + ' Payment fell due on ' + isoDate(r.dueDate) + ', and interest under s.16 runs from ' +
+      isoDate(r.appointedDate) + '.';
+  } else {
+    verdict.className = 'verdict';
+    verdict.textContent =
+      'The agreed period is within the statutory ceiling (' + r.basis + '), so it stands as written. ' +
+      'Interest would run from ' + isoDate(r.appointedDate) + ' if payment slipped.';
+  }
+}
+
+/* The comparison table, computed rather than typed, so it cannot go stale. */
+function buildComparison() {
+  const accepted = '2026-04-01';
+  const rows = [
+    { label: 'Micro supplier, Net 90 in writing', agreedDays: 90, hasWrittenAgreement: true, category: 'Micro' },
+    { label: 'Micro supplier, no written terms', agreedDays: 45, hasWrittenAgreement: false, category: 'Micro' },
+    { label: 'Small supplier, Net 30 in writing', agreedDays: 30, hasWrittenAgreement: true, category: 'Small' },
+    { label: 'Medium supplier, Net 90 in writing', agreedDays: 90, hasWrittenAgreement: true, category: 'Medium' },
+  ];
+
+  const tbody = el('comparisonRows');
+  tbody.innerHTML = '';
+
+  for (const row of rows) {
+    // The issue as written: 45 days from receipt, for anything flagged "MSME".
+    const naive = isoDate(addDays(accepted, 45));
+    const actual = statutoryDueDate({ acceptanceDate: accepted, ...row });
+    const correct = isoDate(actual.dueDate);
+    const drift = daysBetween(addDays(accepted, 45), actual.dueDate);
+
+    const tr = document.createElement('tr');
+    const cells = [
+      [row.label, ''],
+      [naive, 'mono' + (naive !== correct ? ' wrong' : '')],
+      [correct, 'mono' + (naive !== correct ? ' right' : '')],
+      [drift === 0 ? '—' : (drift > 0 ? '+' : '') + drift + ' days', 'mono'],
+    ];
+    for (const [text, cls] of cells) {
+      const td = document.createElement('td');
+      if (cls) td.className = cls;
+      td.textContent = text;
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+}
+
+el('controls').addEventListener('input', render);
+el('controls').addEventListener('change', render);
+buildComparison();
+render();
+</script>

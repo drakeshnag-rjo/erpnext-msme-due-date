@@ -1,0 +1,240 @@
+diff --git a/erpnext/accounts/doctype/payment_schedule/payment_schedule.json b/erpnext/accounts/doctype/payment_schedule/payment_schedule.json
+index 2b3e396..5c1e202 100644
+--- a/erpnext/accounts/doctype/payment_schedule/payment_schedule.json
++++ b/erpnext/accounts/doctype/payment_schedule/payment_schedule.json
+@@ -182,11 +182,11 @@
+    "fieldname": "due_date_based_on",
+    "fieldtype": "Select",
+    "label": "Due Date Based On",
+-   "options": "\nDay(s) after invoice date\nDay(s) after the end of the invoice month\nMonth(s) after the end of the invoice month",
++   "options": "\nDay(s) after invoice date\nDay(s) after the end of the invoice month\nMonth(s) after the end of the invoice month\nDay(s) after receipt date",
+    "read_only": 1
+   },
+   {
+-   "depends_on": "eval:in_list(['Day(s) after invoice date', 'Day(s) after the end of the invoice month'], doc.due_date_based_on)",
++   "depends_on": "eval:in_list(['Day(s) after invoice date', 'Day(s) after the end of the invoice month', 'Day(s) after receipt date'], doc.due_date_based_on)",
+    "fieldname": "credit_days",
+    "fieldtype": "Int",
+    "label": "Credit Days",
+diff --git a/erpnext/accounts/doctype/payment_term/payment_term.json b/erpnext/accounts/doctype/payment_term/payment_term.json
+index b0bd6d5..98cbaf5 100644
+--- a/erpnext/accounts/doctype/payment_term/payment_term.json
++++ b/erpnext/accounts/doctype/payment_term/payment_term.json
+@@ -53,11 +53,11 @@
+    "fieldname": "due_date_based_on",
+    "fieldtype": "Select",
+    "label": "Due Date Based On",
+-   "options": "Day(s) after invoice date\nDay(s) after the end of the invoice month\nMonth(s) after the end of the invoice month"
++   "options": "Day(s) after invoice date\nDay(s) after the end of the invoice month\nMonth(s) after the end of the invoice month\nDay(s) after receipt date"
+   },
+   {
+    "bold": 1,
+-   "depends_on": "eval:in_list(['Day(s) after invoice date', 'Day(s) after the end of the invoice month'], doc.due_date_based_on)",
++   "depends_on": "eval:in_list(['Day(s) after invoice date', 'Day(s) after the end of the invoice month', 'Day(s) after receipt date'], doc.due_date_based_on)",
+    "fieldname": "credit_days",
+    "fieldtype": "Int",
+    "label": "Credit Days"
+diff --git a/erpnext/accounts/doctype/payment_terms_template/test_payment_terms_template.py b/erpnext/accounts/doctype/payment_terms_template/test_payment_terms_template.py
+index 92d9126..df61f68 100644
+--- a/erpnext/accounts/doctype/payment_terms_template/test_payment_terms_template.py
++++ b/erpnext/accounts/doctype/payment_terms_template/test_payment_terms_template.py
+@@ -103,6 +103,63 @@ class TestPaymentTermsTemplate(ERPNextTestSuite):
+ 		self.assertEqual(getdate(details.due_date), getdate(add_days(posting_date, 30)))
+ 		self.assertEqual(getdate(details.discount_date), getdate(add_days(posting_date, 10)))
+ 
++	def test_due_date_runs_from_the_receipt_date(self):
++		# Goods received a fortnight before the invoice was raised. A receipt-based
++		# term must run from the receipt, otherwise the buyer can stretch the clock
++		# simply by invoicing late.
++		posting_date = "2026-05-29"
++		receipt_date = "2026-05-15"
++		term = frappe._dict(
++			{
++				"payment_term": "_Test Receipt Term",
++				"invoice_portion": 100.0,
++				"due_date_based_on": "Day(s) after receipt date",
++				"credit_days": 45,
++				"credit_months": 0,
++				"discount_type": "Percentage",
++				"discount": 0,
++				"discount_validity_based_on": "Day(s) after invoice date",
++				"discount_validity": 0,
++			}
++		)
++
++		details = get_payment_term_details(
++			term,
++			posting_date=posting_date,
++			grand_total=100,
++			base_grand_total=100,
++			receipt_date=receipt_date,
++		)
++
++		self.assertEqual(getdate(details.due_date), getdate(add_days(receipt_date, 45)))
++		# ...which is a fortnight earlier than an invoice-based term would give.
++		self.assertLess(getdate(details.due_date), getdate(add_days(posting_date, 45)))
++
++	def test_receipt_term_falls_back_to_invoice_date(self):
++		# Invoice raised ahead of delivery, so there is no receipt yet. The term
++		# must still yield a due date rather than None.
++		posting_date = "2026-05-29"
++		term = frappe._dict(
++			{
++				"payment_term": "_Test Receipt Term Without Receipt",
++				"invoice_portion": 100.0,
++				"due_date_based_on": "Day(s) after receipt date",
++				"credit_days": 30,
++				"credit_months": 0,
++				"discount_type": "Percentage",
++				"discount": 0,
++				"discount_validity_based_on": "Day(s) after invoice date",
++				"discount_validity": 0,
++			}
++		)
++
++		details = get_payment_term_details(
++			term, posting_date=posting_date, grand_total=100, base_grand_total=100
++		)
++
++		self.assertIsNotNone(details.due_date)
++		self.assertEqual(getdate(details.due_date), getdate(add_days(posting_date, 30)))
++
+ 	def test_duplicate_terms(self):
+ 		template = frappe.get_doc(
+ 			{
+diff --git a/erpnext/accounts/doctype/payment_terms_template_detail/payment_terms_template_detail.json b/erpnext/accounts/doctype/payment_terms_template_detail/payment_terms_template_detail.json
+index 3bb5aa8..ca3509a 100644
+--- a/erpnext/accounts/doctype/payment_terms_template_detail/payment_terms_template_detail.json
++++ b/erpnext/accounts/doctype/payment_terms_template_detail/payment_terms_template_detail.json
+@@ -57,13 +57,13 @@
+    "fieldtype": "Select",
+    "in_list_view": 1,
+    "label": "Due Date Based On",
+-   "options": "Day(s) after invoice date\nDay(s) after the end of the invoice month\nMonth(s) after the end of the invoice month",
++   "options": "Day(s) after invoice date\nDay(s) after the end of the invoice month\nMonth(s) after the end of the invoice month\nDay(s) after receipt date",
+    "reqd": 1
+   },
+   {
+    "columns": 2,
+    "default": "0",
+-   "depends_on": "eval:in_list(['Day(s) after invoice date', 'Day(s) after the end of the invoice month'], doc.due_date_based_on)",
++   "depends_on": "eval:in_list(['Day(s) after invoice date', 'Day(s) after the end of the invoice month', 'Day(s) after receipt date'], doc.due_date_based_on)",
+    "fetch_from": "payment_term.credit_days",
+    "fetch_if_empty": 1,
+    "fieldname": "credit_days",
+diff --git a/erpnext/accounts/services/payment_schedule.py b/erpnext/accounts/services/payment_schedule.py
+index 79cf352..32c3f75 100644
+--- a/erpnext/accounts/services/payment_schedule.py
++++ b/erpnext/accounts/services/payment_schedule.py
+@@ -65,7 +65,11 @@ class PaymentScheduleService:
+ 					doc.ignore_default_payment_terms_template = 1
+ 			elif doc.get("payment_terms_template"):
+ 				data = get_payment_terms(
+-					doc.payment_terms_template, posting_date, grand_total, base_grand_total
++					doc.payment_terms_template,
++					posting_date,
++					grand_total,
++					base_grand_total,
++					receipt_date=get_receipt_date(doc),
+ 				)
+ 				for item in data:
+ 					doc.append("payment_schedule", item)
+@@ -172,7 +176,9 @@ class PaymentScheduleService:
+ 
+ 			if automatically_fetch_payment_terms:
+ 				if schedule.due_date_based_on:
+-					payment_schedule["due_date"] = get_due_date(schedule, posting_date)
++					payment_schedule["due_date"] = get_due_date(
++						schedule, posting_date, receipt_date=get_receipt_date(doc)
++					)
+ 					payment_schedule["due_date_based_on"] = schedule.due_date_based_on
+ 					payment_schedule["credit_days"] = cint(schedule.credit_days)
+ 					payment_schedule["credit_months"] = cint(schedule.credit_months)
+@@ -335,6 +341,28 @@ def linked_order_has_payment_schedule(po_or_so) -> list:
+ 	return frappe.get_all("Payment Schedule", filters={"parent": po_or_so})
+ 
+ 
++def get_receipt_date(doc) -> DateTimeLikeObject | None:
++	"""Earliest goods receipt backing this document.
++
++	Where an invoice draws on several receipts the earliest one governs, because
++	the clock in receipt-based regimes runs from delivery and the supplier should
++	not lose days to the buyer's choice of when to invoice.
++	"""
++	if doc.get("doctype") != "Purchase Invoice":
++		return None
++
++	receipts = {d.get("purchase_receipt") for d in (doc.get("items") or []) if d.get("purchase_receipt")}
++	if not receipts:
++		return None
++
++	dates = frappe.get_all(
++		"Purchase Receipt",
++		filters={"name": ("in", list(receipts)), "docstatus": 1},
++		pluck="posting_date",
++	)
++	return min(dates) if dates else None
++
++
+ @frappe.whitelist()
+ def get_payment_terms(
+ 	terms_template: str,
+@@ -342,6 +370,7 @@ def get_payment_terms(
+ 	grand_total: float | None = None,
+ 	base_grand_total: float | None = None,
+ 	bill_date: DateTimeLikeObject | None = None,
++	receipt_date: DateTimeLikeObject | None = None,
+ ) -> list:
+ 	if not terms_template:
+ 		return
+@@ -350,7 +379,9 @@ def get_payment_terms(
+ 	schedule = []
+ 	for d in terms_doc.get("terms"):
+ 		d = frappe._dict(d.as_dict())
+-		term_details = get_payment_term_details(d, posting_date, grand_total, base_grand_total, bill_date)
++		term_details = get_payment_term_details(
++			d, posting_date, grand_total, base_grand_total, bill_date, receipt_date
++		)
+ 		schedule.append(term_details)
+ 
+ 	return schedule
+@@ -363,6 +394,7 @@ def get_payment_term_details(
+ 	grand_total: float | None = None,
+ 	base_grand_total: float | None = None,
+ 	bill_date: DateTimeLikeObject | None = None,
++	receipt_date: DateTimeLikeObject | None = None,
+ ) -> frappe._dict:
+ 	term_details = frappe._dict()
+ 	if isinstance(term, str):
+@@ -392,7 +424,7 @@ def get_payment_term_details(
+ 	has_discount = flt(term.get("discount"))
+ 	date = bill_date or posting_date
+ 	if date:
+-		term_details.due_date = get_due_date(term, date)
++		term_details.due_date = get_due_date(term, date, receipt_date=receipt_date)
+ 		term_details.discount_date = get_discount_date(term, date) if has_discount else None
+ 
+ 	if posting_date and getdate(term_details.due_date) < getdate(posting_date):
+@@ -401,7 +433,7 @@ def get_payment_term_details(
+ 	return term_details
+ 
+ 
+-def get_due_date(term, posting_date=None, bill_date=None):
++def get_due_date(term, posting_date=None, bill_date=None, receipt_date=None):
+ 	due_date = None
+ 	date = bill_date or posting_date
+ 	if term.due_date_based_on == "Day(s) after invoice date":
+@@ -410,6 +442,13 @@ def get_due_date(term, posting_date=None, bill_date=None):
+ 		due_date = add_days(get_last_day(date), cint(term.credit_days))
+ 	elif term.due_date_based_on == "Month(s) after the end of the invoice month":
+ 		due_date = get_last_day(add_months(date, cint(term.credit_months)))
++	elif term.due_date_based_on == "Day(s) after receipt date":
++		# Several jurisdictions run the payment clock from receipt of the goods
++		# rather than the invoice date -- India's MSMED Act s.15 and the EU Late
++		# Payment Directive 2011/7/EU among them. Fall back to the invoice date
++		# when nothing has been received yet, so this term can never produce a
++		# null due date on an invoice raised ahead of delivery.
++		due_date = add_days(receipt_date or date, cint(term.credit_days))
+ 	return due_date
+ 
+ 

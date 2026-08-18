@@ -1,0 +1,11 @@
+{
+  "name": "erpnext-msme-due-date",
+  "version": "1.0.0",
+  "description": "Statutory MSME payment due dates for ERPNext issue #42807, with a reference implementation and conformance vectors.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "build": "node build.js"
+  }
+}

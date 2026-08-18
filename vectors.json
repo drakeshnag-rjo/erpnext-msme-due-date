@@ -1,0 +1,4898 @@
+[
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": "2026-04-02",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": "2026-04-02",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-04-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": "2026-05-02",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": "2026-05-02",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2026-05-01",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 30
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 30
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 1
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 1
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 31
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 31
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2026-05-17",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2026-05-31",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2026-06-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2026-05-16",
+   "appointedDate": "2026-05-17",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 105
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-04-16",
+   "appointedDate": "2026-04-17",
+   "capped": true,
+   "voidedDays": 105
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-04-01",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2026-07-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": "2026-12-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": "2026-12-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2026-12-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": "2027-01-15",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": "2027-01-15",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2027-01-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 30
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 30
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 1
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 1
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 31
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 31
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2027-01-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2027-02-13",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2027-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2027-01-29",
+   "appointedDate": "2027-01-30",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 105
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2026-12-30",
+   "appointedDate": "2026-12-31",
+   "capped": true,
+   "voidedDays": 105
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2026-12-15",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2027-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": "2028-03-01",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": "2028-03-01",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 0,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 0,
+   "dueDate": "2028-02-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 15,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": "2028-03-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": "2028-03-31",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 30,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 30,
+   "dueDate": "2028-03-30",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 30
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 30
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 45,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 1
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 1
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 31
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 31
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 46,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 46,
+   "dueDate": "2028-04-15",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 15
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 60,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 60,
+   "dueDate": "2028-04-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 45
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 90,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 90,
+   "dueDate": "2028-05-29",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 45,
+   "dueDate": "2028-04-14",
+   "appointedDate": "2028-04-15",
+   "capped": true,
+   "voidedDays": 75
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": true,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 105
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Micro",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": true,
+   "allowedDays": 15,
+   "dueDate": "2028-03-15",
+   "appointedDate": "2028-03-16",
+   "capped": true,
+   "voidedDays": 105
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Small",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": true
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ },
+ {
+  "input": {
+   "acceptanceDate": "2028-02-29",
+   "agreedDays": 120,
+   "hasWrittenAgreement": false,
+   "category": "Medium",
+   "udyamRegistered": false
+  },
+  "expected": {
+   "protected": false,
+   "allowedDays": 120,
+   "dueDate": "2028-06-28",
+   "appointedDate": null,
+   "capped": false,
+   "voidedDays": 0
+  }
+ }
+]
