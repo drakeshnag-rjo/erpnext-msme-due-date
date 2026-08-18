@@ -90,6 +90,26 @@ available. The two tests added to `test_payment_terms_template.py` follow that f
 existing DB-free pattern, but have not been run inside a live instance. They should be before
 any PR is opened.
 
+## Opening the PR
+
+The branch is pushed and ready at
+[`drakeshnag-rjo/erpnext:feat/payment-term-days-after-receipt`](https://github.com/drakeshnag-rjo/erpnext/tree/feat/payment-term-days-after-receipt).
+
+The GitHub API refuses `CreatePullRequest` against `frappe/erpnext` for this account
+(`does not have the correct permissions`), despite the fork being correctly linked and the
+account email verified — a policy on the upstream side. Open it through the web UI instead:
+
+**https://github.com/frappe/erpnext/compare/develop...drakeshnag-rjo:erpnext:feat/payment-term-days-after-receipt?expand=1**
+
+Title (their `semantic-commits` workflow requires the karma convention):
+
+```
+feat: add "Day(s) after receipt date" payment term basis
+```
+
+Body: paste [`PULL_REQUEST.md`](PULL_REQUEST.md). Base branch `develop`. Open it as a
+**draft** — ERPNext's own suite has not been run here.
+
 ## Sources
 
 MSMED Act 2006 ss.2(b), 2(n), 15, 16. Income Tax Act 1961 s.43B(h), inserted by the Finance
